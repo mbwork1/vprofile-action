@@ -6,11 +6,11 @@ env:
   EKS_CLUSTER: iguops-eks
 
 jobs:
-    Testing:
+  Testing:
     runs-on: ubuntu-latest
     steps:
-      - name: Code checkout
-        uses: actions/checkout@v4
+    - name: Code checkout
+      uses: actions/checkout@v4
 
       - name: Maven test
         run: mvn test
