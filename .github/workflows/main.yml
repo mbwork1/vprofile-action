@@ -6,6 +6,7 @@ env:
   EKS_CLUSTER: iguops-eks
 
 jobs:
+    Testing:
     runs-on: ubuntu-latest
     steps:
       - name: Code checkout
