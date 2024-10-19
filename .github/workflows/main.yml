@@ -95,7 +95,7 @@ jobs:
 #       - name: Print config file
 #         run: cat ~/.kube/config
 
-<<<<<<< HEAD
+# <<<<<<< HEAD
 #       - name: Login to ECR
 #         run: kubectl create secret docker-registry regcred23 --docker-server=${{ secrets.REGISTRY }} --docker-username=AWS  --docker-password=$(aws ecr get-login-password) 
 # #        run: kubectl delete secret docker-registry regcred
@@ -112,21 +112,21 @@ jobs:
 #           namespace: default
 #           values: appimage=${{ secrets.REGISTRY }}/${{ env.ECR_REPOSITORY }},apptag=${{ github.run_number }}
 #           name: vprofile-stack    
-=======
-      - name: Login to ECR
-        run: kubectl create secret docker-registry regcred22 --docker-server=${{ secrets.REGISTRY }} --docker-username=AWS  --docker-password=$(aws ecr get-login-password) 
-#        run: kubectl delete secret docker-registry regcred
+# =======
+#       - name: Login to ECR
+#         run: kubectl create secret docker-registry regcred22 --docker-server=${{ secrets.REGISTRY }} --docker-username=AWS  --docker-password=$(aws ecr get-login-password) 
+# #        run: kubectl delete secret docker-registry regcred
  
-      - name: Deploy Helm
-        uses: bitovi/github-actions-deploy-eks-helm@v1.2.8
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ env.AWS_REGION }}
-          cluster-name: ${{ env.EKS_CLUSTER }}
-          #config-files: .github/values/dev.yaml
-          chart-path: helm/vprofilecharts
-          namespace: default
-          values: appimage=${{ secrets.REGISTRY }}/${{ env.ECR_REPOSITORY }},apptag=${{ github.run_number }}
-          name: vprofile-stack    
->>>>>>> 2d524bde623d3108925c233878abe92407fbb00a
+#       - name: Deploy Helm
+#         uses: bitovi/github-actions-deploy-eks-helm@v1.2.8
+#         with:
+#           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#           aws-region: ${{ env.AWS_REGION }}
+#           cluster-name: ${{ env.EKS_CLUSTER }}
+#           #config-files: .github/values/dev.yaml
+#           chart-path: helm/vprofilecharts
+#           namespace: default
+#           values: appimage=${{ secrets.REGISTRY }}/${{ env.ECR_REPOSITORY }},apptag=${{ github.run_number }}
+#           name: vprofile-stack    
+# >>>>>>> 2d524bde623d3108925c233878abe92407fbb00a
